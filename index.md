@@ -1,38 +1,36 @@
-## Welcome to GitHub Pages
+## **Week 1 Lab -- Remote Access and the Filesystem**
 
-You can use the [editor on GitHub](https://github.com/haowang0716/lab-report-1-week-2.md/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### **Part 1 -- Download Visual Studio Code**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+*Visual Studio Code is a source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git.*
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+First, you need to download visual studio code to your computer. 
+[VSCode Download](https://code.visualstudio.com/download)
 
-### Jekyll Themes
+When you have it downloaded, if you open it up you will see a screen looks like this: 
+![VScode](VScode.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/haowang0716/lab-report-1-week-2.md/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+**Share your progress in notes** After you arrive at this step, share a screenshot of your progress in the group doc.
 
-### Support or Contact
+### **Part 2 -- Remotely Connecting**
+Starting from now, you will encounter many courses in CSE use course-specific accounts. In this course, we’ll use VScode to connect to a remote computer over the Internet to do work there.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+If you are on Windows, download a program called OpenSSH first. [OpenSSH Download](https://www.openssh.com)
 
+Then, look up your account information for this course on the below website: 
+[sdacs](https://sdacs.ucsd.edu/~icc/index.php)
+
+Then, in Visual Studio Code, we are going to connect to the remote computer using VSCode’s remote option.
+
+---
+
+* First, open a terminal in VSCode (Ctrl or Command + `, or use the Terminal → New Terminal menu option). Your command will look like this, but with the zz replaced by the letters in your course-specific account.
+   > $ ssh cs15lwi22zz@ieng6.ucsd.edu
+
+* You will probably get some output looks like below if this this the first time you do this:
+  > ⤇ ssh cs15lwi22zz@ieng6.ucsd.edu The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec. Are you sure you want to continue connecting (yes/no/[fingerprint])? 
+
+* Press yes and continue to type in the password. 
+ 
