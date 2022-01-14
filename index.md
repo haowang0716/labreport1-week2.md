@@ -133,7 +133,7 @@ Once you do this, you should be able to ssh or scp from this client to the serve
 
 Use what you’ve learned to come up with the most pleasant process you can for making a local edit to WhereAmI.java, then copying it to the remote server and running it.
 
-Some hints:
+**Some hints:**
 
 You can write a command in quotes at the end of an ssh command to directly run it on the remote server, then exit. For example, this command will log in and list the home directory on the remote server:
 $ ssh cs15lwi22@ieng6.ucsd.edu "ls"
