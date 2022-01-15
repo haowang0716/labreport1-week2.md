@@ -98,7 +98,7 @@ $ <logout>
 # back on client
 $ scp /Users/joe/.ssh/id_rsa.pub cs15lwi22@ieng6.ucsd.edu:~/.ssh/authorized_keys
 ```
-# You use your username and the path you saw in the command above
+>Remember!:You use your username and the path you saw in the command above
 Once you do this, you should be able to ssh or scp from this client to the server without entering your password.
 
 ### **Part 6 -- Optimizing Remote Running **
