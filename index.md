@@ -71,7 +71,7 @@ I created a file on my computer called WhereAmI.java and put the following conte
 Then, log into ieng6 with ssh again, and use ls. I saw the file there in my home directory! 
 
 The output looks like this: 
-![Result](4file.png)
+![Result](4file.PNG)
 
 ### **Part 5 -- Setting an SSH Key **
 
