@@ -27,10 +27,14 @@ Then, in Visual Studio Code, we are going to connect to the remote computer usin
 ---
 
 * First, open a terminal in VSCode (Ctrl or Command + `, or use the Terminal → New Terminal menu option). I used below command, but with the zz replaced by the letters in my course-specific account.
-   > $ ssh cs15lwi22zz@ieng6.ucsd.edu
+  ```
+  $ ssh cs15lwi22zz@ieng6.ucsd.edu
+  ```
 
 * Because this was the first time I do this, I encountered the output looks like this: 
-  > ⤇ ssh cs15lwi22zz@ieng6.ucsd.edu The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec. Are you sure you want to continue connecting (yes/no/[fingerprint])? 
+  ```
+  ⤇ ssh cs15lwi22zz@ieng6.ucsd.edu The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec. Are you sure you want to continue connecting (yes/no/[fingerprint])? 
+  ```
 
 * Press yes and continue to type in the password. I saw the result:
 ![sshlogin](2sshlogin.png)
@@ -45,8 +49,11 @@ One example of the results I did on my computer would be:
 ![Example Commands](3exampleCommand.png)
 
 Also, i used the below command to log out of the server: 
-> * Ctrl-D
-> * Run the command exit
+ ```
+* Ctrl-D
+* Run the command exit
+ ```
+
 
 ### **Part 4 -- Moving Files with scp **
 
@@ -54,7 +61,8 @@ Next, I tried to see how to copy files back and forth between the computers.
 
 I created a file on my computer called WhereAmI.java and put the following contents into it:
 
-> class WhereAmI {
+```
+class WhereAmI {
   public static void main(String[] args) {
     System.out.println(System.getProperty("os.name"));
     System.out.println(System.getProperty("user.name"));
@@ -62,10 +70,13 @@ I created a file on my computer called WhereAmI.java and put the following conte
     System.out.println(System.getProperty("user.dir"));
   }
 }
+```
 
 * Run it using javac and java on your computer. What do you see? (If you don’t have java installed on your computer, skip this step).
 * Then, in the terminal from the directory where I made the file, I ran this command with my user name:
-> scp WhereAmI.java cs15lwi22zz@ieng6.ucsd.edu:~/
+```
+scp WhereAmI.java cs15lwi22zz@ieng6.ucsd.edu:~/
+```
 * You should see the text to ask you to type in your password, if you can not see this, ask the tutors for help.
 
 Then, log into ieng6 with ssh again, and use ls. I saw the file there in my home directory! 
@@ -83,7 +94,9 @@ As we are moving forward, did you realized the issue that when we log in each ti
 * Since I did not want any password, I entered empty twice. 
 
 Here is something you will see: 
+
 ![SSHkey](5Key.png)
+
 
 This created two new files on your system; the private key and the public key, stored in the .ssh directory on your computer.
 
@@ -103,16 +116,19 @@ Once you do this, you should be able to ssh or scp from this client to the serve
 
 ### **Part 6 -- Optimizing Remote Running **
 
-To make the coding experience more pleasant, below are two commands you should try: 
+To make the coding experience more pleasant, I tried two commands: 
 
-You can write a command in quotes at the end of an ssh command to directly run it on the remote server, then exit. For example, this command will log in and list the home directory on the remote server:
+> First, we can write a command in quotes at the end of an ssh command to directly run it on the remote server, then exit. For instance:
 ```
 $ ssh cs15lwi22@ieng6.ucsd.edu "ls"
 ```
-You can use semicolons to run multiple commands on the same line in most terminals. For example, try:
+> Elsem, we can use semicolons to run multiple commands on the same line in most terminals. For example, try:
 ```
 $ cp WhereAmI.java OtherMain.java; javac OtherMain.java; java WhereAmI
 ```
+
+So first, I made a change to the local WhereAmI.java by add an additional print statement says "Hi, this is Hao". And after saving it, I used scp as well as the above commands to save them to the remote server and run it. Here is the result: 
+
 
 It allows you to log in and do actions without type your password. 
 ![result](6WhereAmI.png)
